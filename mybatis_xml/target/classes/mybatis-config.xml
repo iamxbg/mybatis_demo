@@ -11,19 +11,16 @@
       <property name="org.apache.ibatis.parsing.PropertyParser.default-value-separator" value="?:"/>
        -->
   </properties>
-  
-  <settings>
-	<!-- configurate the behaviors of mybatis -->
-  </settings>
-  
-  <typeAliases>
-      <!-- set the short name for java type -->
-  </typeAliases>
-  
-  <typeHandlers>
-      
-  </typeHandlers>
-    
+	
+	<!-- 
+	
+	<plugins>
+		<plugin interceptor="mybatis_xml.daoInterceptor.SelectInterceptor">
+			<property name="before" value="Hello nerd!"/>
+		</plugin>
+	</plugins>
+	    -->
+     
   <environments default="development">
     <environment id="development">
       <transactionManager type="JDBC"/>
@@ -35,7 +32,11 @@
       </dataSource>
     </environment>
   </environments>
-  <mappers>
-    <mapper resource="org/mybatis/example/Dude.xml"/>
-  </mappers>
+
+	<mappers>
+		<!-- 
+		<mapper class="mybatis_xml.dao.UserMapper"/>
+		 -->
+		 <package name="mybatis_xml.dao"/>
+	</mappers>
 </configuration>

@@ -4,19 +4,18 @@
     
   <!-- properties file for configuration -->  
   <properties resource="jdbc.properties"/>
-   <classPathEntry location="D:/downloads/mysql-connector-java-6.0.6.jar"/>
+   <classPathEntry location="D:/mysql-connector-java-6.0.6.jar"/>
   <!-- configuration -->
   <context id="development">
     <jdbcConnection connectionURL="${jdbc.url}" driverClass="${jdbc.driverClassName}" password="${jdbc.password}" userId="${jdbc.username}" />
-    <javaModelGenerator targetPackage="entity" targetProject="D:\eclipse-workspace\mybatis_demo\mybatis_xml\src\main\java\mybatis_xml" />
-    <sqlMapGenerator targetPackage="entity" targetProject="D:\eclipse-workspace\mybatis_demo\mybatis_xml\src\main\java\mybatis_xml" />
-    <javaClientGenerator targetPackage="dao" targetProject="D:\eclipse-workspace\mybatis_demo\mybatis_xml\src\main\java\mybatis_xml" type="XMLMAPPER" />
+    <javaModelGenerator targetPackage="mybatis_xml.entity" targetProject="C:\Users\m\git\mybatis_demo\mybatis_xml\src\main\java\" />
+    <sqlMapGenerator targetPackage="mybatis_xml.dao" targetProject="C:\Users\m\git\mybatis_demo\mybatis_xml\src\main\java\" />
+    <javaClientGenerator targetPackage="mybatis_xml.dao" targetProject="C:\Users\m\git\mybatis_demo\mybatis_xml\src\main\java\" type="XMLMAPPER" />
     
-    <table schema="mybatis_test" tableName="user_t" domainObjectName="user">
+    <table schema="mybatis_test" tableName="user_t" domainObjectName="User">
       <columnOverride column="id" property="id" />
       <columnOverride column="name" property="name"/>
       <columnOverride column="age" property="age"/>
     </table>
-    
   </context>
 </generatorConfiguration>
